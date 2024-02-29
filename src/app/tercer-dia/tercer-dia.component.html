@@ -1,1 +1,28 @@
 <p>tercer-dia works!</p>
+
+<h1>Prueba Servicios</h1>
+<input type="text" [(ngModel)]="name" class="form-control">
+<button class="btn btn-primary" (click)="service.onClickButton(name)">Agregar</button>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        
+      
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let itemuser of users;let i=index">
+        <th>{{i+1}}</th>
+        <th>{{itemuser.title}}</th>
+        <td>{{itemuser.body}}</td>
+
+      </tr>
+        
+     
+    </tbody>
+  </table>

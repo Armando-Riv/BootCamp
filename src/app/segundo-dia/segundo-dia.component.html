@@ -28,7 +28,7 @@
     <tbody>
       <tr *ngFor=" let itemuser of user">
         <th>{{itemuser.name}}</th>
-        <td>{{itemuser.description}}</td>
+        <td>{{itemuser.desc}}</td>
 
       </tr>
         
@@ -74,10 +74,10 @@ Mostrar los valores en la consola
         type="text"
         formControlName="name"
     >
-    <span>Descripcion</span>
+    <span>Desc</span>
     <input
         type="text"
-        formControlName="description"
+        formControlName="desc"
     >
     <button
         class=" btn btn-success"

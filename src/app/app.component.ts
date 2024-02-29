@@ -21,4 +21,5 @@ export class AppComponent {
       title: 'Prueba 2',
       description:'Prueba decsripcion'
   }
+  
 }
