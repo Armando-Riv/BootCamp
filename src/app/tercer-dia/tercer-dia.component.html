@@ -2,7 +2,11 @@
 <h1>Prueba Servicios</h1>
 <input type="text" [(ngModel)]="name" class="form-control">
 <button class="btn btn-primary" (click)="service.onClickButton(name)">Agregar</button>
-
+<hr size="10px">
+<div class="d-flex" style="height: 40px;">
+  <div class="vr"></div>
+</div>
+<a class="nav-link active" routerLink="/primer-dia">1er dia</a>
 <table class="table">
     <thead>
       <tr>
@@ -18,10 +22,13 @@
       <tr *ngFor=" let itemuser of users;let i=index">
         <th>{{i+1}}</th>
         <th>{{itemuser.title}}</th>
-        <td>{{itemuser.body}}</td>
-
+        <td>{{itemuser.body}} </td>
+        <td><button type="button" class="btn btn-danger"(click)="eliminar(i)">Eliminar</button></td>
+        <td> </td>
+        
       </tr>
         
      
     </tbody>
   </table>
+  

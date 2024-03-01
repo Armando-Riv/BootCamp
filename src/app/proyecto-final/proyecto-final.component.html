@@ -1,0 +1,122 @@
+
+<div class="container">
+    <div class="border">
+    <div class="d-flex justify-content-between">
+        <div class="p-2">
+            <h1>Proyecto Final</h1>
+        </div>
+
+        <div class="p-2">
+            <div class="p-2"><button type="button" class="btn btn-outline-info btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Agregar un nuevo usuario
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="d-flex justify-content-between">
+                                    
+                                <div class="d-flex flex-column mb-3">
+                                    <div class="p-2">
+                                        
+                                            <form [formGroup]="formulariouser">
+                                                <div>Nombre</div>
+                                                <input
+                                                    type="text"
+                                                    formControlName="name"
+                                                  
+                                                >
+                                                <div>Descripcion</div>
+                                                <textarea
+                                                    type="text"
+                                                    formControlName="description"
+                                                    rows="9"
+                                                    
+                                                ></textarea>
+
+                                                
+                                                    
+                                      
+                                </form>
+                                      </div>
+                                    </div>
+                                <div class="my-google-map">
+                                    <google-map (mapClick)="getcoords($event)" [width]="250" [height]="300"> 
+                                        <map-marker [position]="position"></map-marker>
+                                       </google-map>
+      
+
+                                 </div>
+                            </div>
+
+                            <div class="modal-footer ">
+                                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                                <button type="text" class="btn btn-primary btn-sm" (click)="submitForm()"  data-bs-dismiss="modal">Save changes
+                                
+                                </button>
+                            </div>
+                        </div>
+                            </div>
+
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+
+    </div>
+
+
+
+
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex align-items-center justify-content-center">
+
+
+            <div class="d-flex flex-column mb-3">
+
+                <div class="p-2">
+                    <div *ngFor="let item of usuarios;let i=index" class="card" style="width: 35rem;">
+                        <div class="card-body">
+                            <p class="card-text">Nombre: {{item.name}}</p>
+                            <p class="card-text">Descripcion: {{item.description}}</p>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates earum aut quod delectus.
+                                Ratione quo unde tenetur, ut saepe culpa distinctio. Ullam exercitationem ipsa dolore,
+                                voluptatum neque quia rem quod.</p>
+                            <a style="width: 6rem;" class="btn btn-primary"> Borrar</a>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Editar
+                            </button>
+                            <a href="#" style="width: 6rem;" class="btn btn-primary">Ubicar</a>
+                        </div>
+                    </div>
+        
+                </div>
+                </div>
+        </div>
+        
+        <div class="p-2">
+            <div class="my-google-map">
+                <google-map (mapClick)="getcoords($event)" [width]="495" [height]="350"> 
+                    <map-marker [position]="position"></map-marker>
+                   </google-map>
+
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+

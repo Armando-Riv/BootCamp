@@ -3,6 +3,8 @@ import { ExampleService } from '../services/example.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { response } from 'express';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-tercer-dia',
@@ -12,8 +14,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './tercer-dia.component.scss'
 })
 export class TercerDiaComponent {
+[x: string]: any;
   name='';
-  users:any= []
+  users:any= [];
   constructor(public service: ExampleService){
 
 }
@@ -24,4 +27,15 @@ this.service.obtenerLista().subscribe(resp =>{
 
 })
 }
+eliminar(id:number){
+  console.log(this.service.eliminar(id))
+  if(confirm('Seguro que desea eliminar')){
+    this.service.eliminar(id).subscribe(resp =>{
+    
+    })
+  }
+  
+}
+
+
 }

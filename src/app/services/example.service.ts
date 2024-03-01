@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class ExampleService {
   var_service="Hola Crayola";
   api_url='https://jsonplaceholder.typicode.com/';
+  api_del='https://jsonplaceholder.typicode.com/posts/';
   constructor(private http: HttpClient){
  
   }
@@ -17,4 +18,11 @@ export class ExampleService {
     console.log(text)
     this.var_service=text;
   }
+  eliminar(id:any){
+       
+    console.log(this.api_del+(id+1))
+    return this.http.delete(`${this.api_del}`+(id+1))
+   
+    
+   }
 }

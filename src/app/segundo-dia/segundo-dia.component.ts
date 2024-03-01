@@ -17,6 +17,7 @@ variable='';
 formulariouser:FormGroup = new FormGroup({
 name:new FormControl(''),
 desc:new FormControl('')
+
   })
 
   
